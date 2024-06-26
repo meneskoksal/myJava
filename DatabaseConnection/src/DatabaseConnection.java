@@ -14,7 +14,9 @@ public class DatabaseConnection {
             Connection connection = DriverManager.getConnection(url,username,password);
 
             Statement statement = connection.createStatement();
-
+//            String insert = "Insert into student Values (4,' stallion',5)";
+//
+//            statement.execute(insert);
 
             ResultSet resultSet = statement.executeQuery("select * from student");
 
