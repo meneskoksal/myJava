@@ -1,7 +1,4 @@
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DatabaseConnection {
 
@@ -18,20 +15,27 @@ public class DatabaseConnection {
 
             Statement statement = connection.createStatement();
 
+
             ResultSet resultSet = statement.executeQuery("select * from student");
 
             while (resultSet.next()){
                 System.out.println(resultSet.getInt(1)+ resultSet.getString(2)+ resultSet.getInt(3));
             }
+
             connection.close();
+
+//           public void dbChecker (int a){
+//
+//           }
 
         }
 
         catch(Exception e){
             System.out.println(e);
         }
+
+
+
     }
-
-
 
 }
