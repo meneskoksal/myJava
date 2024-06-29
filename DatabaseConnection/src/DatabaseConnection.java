@@ -18,8 +18,10 @@ public class DatabaseConnection {
 //
 //            statement.execute(insert);
 
-            ResultSet resultSet = statement.executeQuery("select * from student");
+            ResultSet resultSet = statement.executeQuery("select * from student  ");
 
+            int a = resultSet.getMetaData().getColumnCount();
+            System.out.println(a +" ");
             while (resultSet.next()){
                 System.out.println(resultSet.getInt(1)+ resultSet.getString(2)+ resultSet.getInt(3));
             }
