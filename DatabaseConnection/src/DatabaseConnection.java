@@ -21,16 +21,22 @@ public class DatabaseConnection {
             ResultSet resultSet = statement.executeQuery("select * from student  ");
 
             int a = resultSet.getMetaData().getColumnCount();
-            System.out.println(a +" ");
+
+
+
             while (resultSet.next()){
-                System.out.println(resultSet.getInt(1)+ resultSet.getString(2)+ resultSet.getInt(3));
+
+                int counter = 1;// automatically prints every row
+
+                while (counter <= a){
+                    System.out.print(resultSet.getString(counter)+ " ");
+                    ++counter;
+                }
+                System.out.println();
             }
 
             connection.close();
 
-//           public void dbChecker (int a){
-//
-//           }
 
         }
 
